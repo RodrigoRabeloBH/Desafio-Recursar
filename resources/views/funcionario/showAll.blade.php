@@ -39,9 +39,9 @@
                             <td>{{$funcionario->Salario}}</td>      
                             <td class="text-right">
                                 <a href="/funcionario/{{$funcionario->CodFuncionario}}" class="btn-sm btn-secondary mx-1">
-                                    <i class="fas fa-info-circle"></i>
+                                    <i class="fas fa-info-circle my-2"></i>
                                 </a>
-                                <a href="/funcionario/{{$funcionario->CodFuncionario}}/edit" class="btn-sm btn-info my-2 mx-1">
+                                <a href="/funcionario/{{$funcionario->CodFuncionario}}/edit" class="btn-sm btn-info mx-1">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>                                   
                             </td>              
