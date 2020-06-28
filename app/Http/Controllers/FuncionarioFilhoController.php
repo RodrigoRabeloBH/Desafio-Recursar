@@ -50,7 +50,7 @@ class FuncionarioFilhoController extends Controller
 
         $filho->save();
 
-        return redirect('/showall')->with('success', 'Funcionário cadastrado!');
+        return redirect('/showall')->with('success', 'Filho adicionado!');
     }
 
     /**
@@ -59,9 +59,12 @@ class FuncionarioFilhoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($CodFuncionarioFilho)
     {
-        //
+        
+
+        $filho = FuncionarioFilho::find($CodFuncionarioFilho);
+        return view('funcionarioFilho.show')->with('filho', $filho);
     }
 
     /**
@@ -70,9 +73,10 @@ class FuncionarioFilhoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($CodFuncionarioFilho)
     {
-        //
+        $filho = FuncionarioFilho::find($CodFuncionarioFilho);
+        return view('funcionarioFilho.edit')->with('filho',$filho);
     }
 
     /**
@@ -82,9 +86,21 @@ class FuncionarioFilhoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $CodFuncionarioFilho)
     {
-        //
+        $this->validate($request, [
+            'Nome' => 'required',
+            'DataNascimento' => 'required'         
+        ]);
+
+        $filho = FuncionarioFilho::find($CodFuncionarioFilho);
+
+        $filho->Nome = $request->input('Nome');
+        $filho->DataNascimento = $request->input('DataNascimento');
+
+        $filho->save();
+
+        return redirect('/showall')->with('success', 'Informações atualizadas!');
     }
 
     /**
@@ -93,8 +109,10 @@ class FuncionarioFilhoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($CodFincionarioFilho)
     {
-        //
+        $filho = FuncionarioFilho::find($CodFincionarioFilho);
+        $filho->delete();
+        return redirect('/showall')->with('success', 'Removido!');
     }
 }

@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        {{Form::label('DataNascimento','DataNascimento')}}
+                        {{Form::label('DataNascimento','Data de Nascimento')}}
                         {{Form::date('DataNascimento',$funcionario->DataNascimento, ['class' => 'form-control'])}}
                     </div>
                 </div>

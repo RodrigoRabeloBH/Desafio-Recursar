@@ -5,16 +5,17 @@
     <h2 class="mt-4">Detalhe: <span class="text-primary">{{$funcionario->Nome}}</span></h2>
     <div class="jumbotron my-4">     
         <div class="row">
-            <div class="col-md-5 col-sm-12">
+            <div class="col-md-4 col-sm-12">
                 <h5>{{$funcionario->Nome}}</h5>
                 <p class="text-muted">Data de Nascimento: {{date('d/m/Y', strtotime($funcionario->DataNascimento))}}</p>
                 <p class="text-muted">Salário: R${{$funcionario->Salario}}</p>
+                <p class="text-muted">Número de Filhos: {{$NumFilhos}}</p>
                 <p class="text-muted">Atividades: {{$funcionario->Atividades}}</p>      
             </div>
-            <div class="col-md-5 col-sm-12">
-                <h5 class="">Filhos</h5>
+            <div class="col-md-8 col-sm-12">
+                <h4 class="">Filhos</h4>
                 <p class="text-right">
-                    <a href="/funcionariofilho/create" class="btn-sm btn-info">Adicionar Filho</a>
+                    <a href="/funcionariofilho/create" class="btn btn-sm btn-info">Adicionar</a>
                 </p>
                 <table class="table">
                     <thead class="thead-light">                       
@@ -27,13 +28,16 @@
                             <tr>
                                 <td>{{$filho->Nome}}</td>
                                 <td>{{date('d/m/Y', strtotime($filho->DataNascimento))}}</td>
-                                <td class="text-right">
-                                    <a href="" class="btn-sm btn-secondary mx-1">
-                                        <i class="fas fa-info-circle"></i>
-                                    </a>
-                                    <a href="" class="btn-sm btn-info my-2 mx-1">
+                                <td class="text-right"> 
+                                    {!! Form::open(['action'=> ['FuncionarioFilhoController@destroy',$filho->CodFuncionarioFilho],'method' => 'POST']) !!}
+                                    {{Form::hidden('_method','DELETE')}}
+                                    <a href="/funcionariofilho/{{$filho->CodFuncionarioFilho}}/edit" class="btn btn-sm btn-info">
                                         <i class="fas fa-pencil-alt"></i>
-                                    </a>                                   
+                                    </a>  
+                                    <button  type="submit" class="btn btn-sm btn-danger">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>                        
+                                    {!! Form::close() !!}                                     
                                 </td> 
                             </tr>
                         @endforeach
@@ -44,8 +48,7 @@
                     {{$filhos->links()}}
                 </div>
             </div>
-        </div>
-     
+        </div>     
             {!! Form::open(['action'=> ['FuncionarioController@destroy',$funcionario->CodFuncionario],'method' => 'POST']) !!}
             {{Form::hidden('_method','DELETE')}}
             <a href="/showall" class="btn btn-sm btn-primary">Voltar</a>

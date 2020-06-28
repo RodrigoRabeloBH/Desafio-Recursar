@@ -15,7 +15,7 @@
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-primary sticky-top">
         <a href="/">
-            <h5 class="my-0 mr-md-auto font-weight-normal text-white"> Company name</h5>
+            <h5 class="my-0 mr-md-auto font-weight-normal text-white"> Acme</h5>
         </a>
         <nav class="my-2 my-md-0 ml-auto">
             <a class="p-2 text-white" href="/">Home</a>

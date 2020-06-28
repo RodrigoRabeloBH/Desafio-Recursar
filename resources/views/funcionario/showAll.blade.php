@@ -38,10 +38,10 @@
                             <td>{{date('d/m/Y', strtotime($funcionario->DataNascimento))}}</td>              
                             <td>R${{$funcionario->Salario}}</td>      
                             <td class="text-right">
-                                <a href="/funcionario/{{$funcionario->CodFuncionario}}" class="btn-sm btn-secondary mx-1">
-                                    <i class="fas fa-info-circle my-2"></i>
+                                <a href="/funcionario/{{$funcionario->CodFuncionario}}" class="btn btn-sm btn-secondary">
+                                    <i class="fas fa-info-circle"></i>
                                 </a>
-                                <a href="/funcionario/{{$funcionario->CodFuncionario}}/edit" class="btn-sm btn-info mx-1">
+                                <a href="/funcionario/{{$funcionario->CodFuncionario}}/edit" class="btn btn-sm btn-info">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>                                   
                             </td>              

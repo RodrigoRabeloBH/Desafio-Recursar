@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Funcionario;
 use App\FuncionarioFilho;
+
 
 class FuncionarioController extends Controller
 {
@@ -21,6 +23,7 @@ class FuncionarioController extends Controller
 
     public function showAll()
     {
+ 
         $funcionarios = Funcionario::paginate(5);
         return view('funcionario.showAll')->with('funcionarios', $funcionarios);
     }
@@ -80,12 +83,15 @@ class FuncionarioController extends Controller
      */
     public function show($CodFuncionario)
     {
+
         $funcionario = Funcionario::find($CodFuncionario);
+        $numFilhos = FuncionarioFilho::where('CodFuncionario', $CodFuncionario)->count();
         $filhos = FuncionarioFilho::where('CodFuncionario', $CodFuncionario)->paginate(2);
 
         $data = array(
             'funcionario' => $funcionario,
-            'filhos' => $filhos
+            'filhos' => $filhos,
+            'NumFilhos' => $numFilhos
         );
 
 
@@ -112,7 +118,7 @@ class FuncionarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $CodFincionario)
+    public function update(Request $request, $CodFuncionario)
     {
         $this->validate($request, [
             'Nome' => 'required',
@@ -121,7 +127,7 @@ class FuncionarioController extends Controller
             'Atividades' => 'required',
         ]);
 
-        $funcionario = Funcionario::find($CodFincionario);
+        $funcionario = Funcionario::find($CodFuncionario);
 
         $funcionario->Nome = $request->input('Nome');
         $funcionario->DataNascimento = $request->input('DataNascimento');
