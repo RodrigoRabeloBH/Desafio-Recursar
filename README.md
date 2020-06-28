@@ -10,7 +10,7 @@
 
 # Desafio-Tecnico
 
-## Andes de executar a aplicação se assegure de executar o script abaixo:
+## Antes de executar a aplicação se assegure de executar o script abaixo:
 
 ### /* CRIA O BANCO DE DADOS */
 
