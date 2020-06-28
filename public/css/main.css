@@ -1,0 +1,84 @@
+:root {
+    --primary: #cecece;
+    --dark: #000;
+    --light: #fff;
+    --secondary: #80cbc4;
+}
+
+
+.show-case {
+    background-image: url(../images/code-coding-computer-data-574073.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.text-content {
+    padding-top: 200px;
+    padding-left: 50px;
+    color: white;
+}
+
+.text-content h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    color: var(--primary);
+}
+
+.text-content p {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-bottom: 2rem;
+    color: var(--primary);
+
+}
+
+.text-content a {
+    text-decoration: none;
+    color: var(--dark);
+    padding: 0.6rem 1.2rem;
+    background: var(--secondary);
+    border-radius: 5px;
+}
+
+.text-content a:hover {
+    background: var(--primary);
+    color: var(--dark);
+}
+
+footer {
+    height: 138px;
+    color: var(--dark);
+}
+
+@media(max-width:900px) {
+
+    .text-content h1 {
+        font-size: 3rem;
+    }
+
+    .text-content p {
+        margin-top: 30px;
+        font-size: 1.7rem;
+    }
+}
