@@ -53,10 +53,12 @@
 
     const input = document.querySelector('.salario');
     input.addEventListener('blur',()=>{
+        var x = input.value.replace(',','.');
+        input.value = x;   
 
         const re = /^[0-9]{1,6}(.[0-9]{2})$/;
             if (!re.test(input.value)) {
-                alert("Insira um valor válido, use ponto  como separador decimal");
+                alert("Apenas valores numéricos são permitidos");
                 input.value = "";                
             }  
     });
