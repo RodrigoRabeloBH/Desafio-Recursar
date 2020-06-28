@@ -22,7 +22,7 @@ class FuncionarioController extends Controller
     public function showAll()
     {
         $funcionarios = Funcionario::paginate(5);
-        return view('funcionario.showall')->with('funcionarios', $funcionarios);
+        return view('funcionario.showAll')->with('funcionarios', $funcionarios);
     }
 
     /**
