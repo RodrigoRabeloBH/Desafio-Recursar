@@ -36,7 +36,7 @@
                         <tr>                       
                             <td>{{$funcionario->Nome}}</td>              
                             <td>{{date('d/m/Y', strtotime($funcionario->DataNascimento))}}</td>              
-                            <td>{{$funcionario->Salario}}</td>      
+                            <td>R${{$funcionario->Salario}}</td>      
                             <td class="text-right">
                                 <a href="/funcionario/{{$funcionario->CodFuncionario}}" class="btn-sm btn-secondary mx-1">
                                     <i class="fas fa-info-circle my-2"></i>
