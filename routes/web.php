@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FuncionarioController@index');
-Route::get('/showall', 'FuncionarioController@showall');
+Route::get('/showall', 'FuncionarioController@showAll');
 Route::get('/search', 'FuncionarioController@search');
 
 Route::resource('funcionario', 'FuncionarioController');

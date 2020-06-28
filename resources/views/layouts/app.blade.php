@@ -19,7 +19,7 @@
         </a>
         <nav class="my-2 my-md-0 ml-auto">
             <a class="p-2 text-white" href="/">Home</a>
-            <a class="p-2 text-white" href="/funcionario/showall">Funcionários</a>
+            <a class="p-2 text-white" href="/showall">Funcionários</a>
         </nav>
     </div>  
 
