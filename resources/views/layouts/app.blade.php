@@ -24,8 +24,7 @@
     </div>  
 
         @include('inc.message')
-        @yield('content') 
-        
+        @yield('content')        
         <footer class="bg-primary">
             <h6 class="text-center py-5 text-light">Desenvolvido por: Rodrigo Rabelo &copy;</h6>
         </footer>

@@ -25,7 +25,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         {{Form::label('Salario','Salário')}}
-                        {{Form::number('Salario',$funcionario->Salario, ['class' => 'form-control'])}}
+                        {{Form::text('Salario',$funcionario->Salario, ['class' => 'form-control salario'])}}
                     </div>
                 </div>
             </div>
@@ -42,11 +42,22 @@
                     {{Form::submit('Salvar',['class' => 'btn btn-sm btn-info'])}}
                     <a href="/showall" class="btn btn-sm btn-secondary">Voltar</a>
                 </div>
-            </div>       
-         
+            </div> 
             {!! Form::close() !!}
         </div>
     </div>
-
 </div>
+<script>
+    const input = document.querySelector('.salario');
+    input.addEventListener('blur',()=>{
+        var x = input.value.replace(',','.');
+        input.value = x;   
+
+        const re = /^[0-9]{1,6}(.[0-9]{2})$/;
+            if (!re.test(input.value)) {
+                alert("Apenas valores numéricos são permitidos");
+                input.value = "";                
+            }  
+    });
+</script>
 @endsection
