@@ -10,8 +10,6 @@
 
 # Desafio-Tecnico
 
-## Antes de executar a aplicação se assegure de executar o script abaixo:
-
 ### /* CRIA O BANCO DE DADOS */
 
 CREATE DATABASE MYDATABASE;
@@ -20,7 +18,7 @@ CREATE DATABASE MYDATABASE;
 
 USE MYDATABASE;
 
-### /* CRIA AS TABELA*/
+### /* CRIA AS TABELAS*/
 
 CREATE TABLE FUNCIONARIO(
 CodFuncionario INT(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
